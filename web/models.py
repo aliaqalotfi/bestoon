@@ -15,6 +15,9 @@ class Expense(models.Model):
     amount =models.BigIntegerField()
     user= models.ForeignKey(User, on_delete=models.CASCADE)
 
+    def __str__(self):
+        return self.text
+
 
 
 class Income(models.Model):
@@ -22,3 +25,5 @@ class Income(models.Model):
     time=models.DateTimeField()
     amount =models.BigIntegerField()
     user= models.ForeignKey(User, on_delete=models.CASCADE)
+    def __str__(self):
+        return self.text
